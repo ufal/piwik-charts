@@ -290,10 +290,10 @@ PiwikChart.prototype.plotViews = function (div, data, color, tf, ti, highlightSt
     for(index in ticks) {
         var tick = ticks[index];
         if(_self.current_view == "month") {
-            tick = _self.current_year + "-" + tick;
+            tick = _self.current_year + "-" + tick.padStart(2, "0");
         } else
         if(_self.current_view == "day") {
-            tick = _self.current_year + "-" + _self.current_month + "-" + tick;
+            tick = _self.current_year + "-" + _self.current_month.padStart(2, "0") + "-" + tick;
         }
         x.push(tick);
         if(data != undefined && data[ticks[index]]) {
